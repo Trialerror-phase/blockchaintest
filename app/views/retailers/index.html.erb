@@ -1,0 +1,15 @@
+<h1>Retailer Dashboard</h1>
+<p>Welcome, <%= @retailer.name %>!</p>
+
+<h2>Products</h2>
+<ul>
+  <% @received_products.each do |product| %>
+    <li>
+      <strong>Name:</strong> <%= product.name %><br>
+      <strong>Description:</strong> <%= product.description %><br>
+      <strong>Batch Number:</strong> <%= product.batch_number %><br>
+      <%= button_to 'Mark as Sold', mark_as_sold_path(product_id: product.id), method: :post %>
+      <hr>
+    </li>
+  <% end %>
+</ul>

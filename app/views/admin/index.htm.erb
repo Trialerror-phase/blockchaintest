@@ -1,0 +1,25 @@
+<h1>Administrator Dashboard</h1>
+<p>Welcome, <%= @admin.name %>!</p>
+
+<h2>Blockchain Management</h2>
+<ul>
+  <li><%= link_to 'View Blockchain', blockchain_path %></li>
+  <li><%= link_to 'Validate Blockchain', validate_blockchain_path %></li>
+</ul>
+
+<h2>User Management</h2>
+<%= form_with url: add_user_path, method: :post do |form| %>
+  <p>
+    <%= form.label :name, "User Name" %>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :email, "Email" %>
+    <%= form.email_field :email %>
+  </p>
+  <p>
+    <%= form.label :role, "Role" %>
+    <%= form.select :role, ['Supplier', 'Retailer', 'Farmer'] %>
+  </p>
+  <%= form.submit 'Add User' %>
+<% end %>

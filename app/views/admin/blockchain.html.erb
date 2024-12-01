@@ -1,0 +1,13 @@
+<h1>Blockchain</h1>
+<ul>
+  <% @blockchain.chain.each do |block| %>
+    <li>
+      <strong>Index:</strong> <%= block.index %><br>
+      <strong>Nonce:</strong> <%= block.nonce %><br>
+      <strong>Previous Hash:</strong> <%= block.previous_hash %><br>
+      <strong>Data:</strong> <%= block.data %><br>
+      <strong>Timestamp:</strong> <%= block.timestamp %><br>
+      <hr>
+    </li>
+  <% end %>
+</ul>

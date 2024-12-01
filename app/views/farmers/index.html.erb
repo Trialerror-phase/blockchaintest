@@ -1,0 +1,20 @@
+<h1>Farmer Dashboard</h1>
+<p>Welcome, <%= @farmer.name %>!</p>
+
+<h2>Verify Product Source</h2>
+<%= form_with url: verify_product_path, method: :post do |form| %>
+  <p>
+    <%= form.label :batch_number, "Enter Batch Number" %>
+    <%= form.text_field :batch_number %>
+  </p>
+  <%= form.submit 'Verify Product' %>
+<% end %>
+
+<h2>Report Tampered Packaging</h2>
+<%= form_with url: report_tampered_path, method: :post do |form| %>
+  <p>
+    <%= form.label :batch_number, "Enter Batch Number" %>
+    <%= form.text_field :batch_number %>
+  </p>
+  <%= form.submit 'Report' %>
+<% end %>
